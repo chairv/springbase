@@ -1,0 +1,15 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: api-gateway
+zuul:
+    routes:
+       user-service:
+         path: /user/**
+         serviceId: user-service
+    ignore-local-service: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/

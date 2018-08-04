@@ -9,6 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <!--http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html-->
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>spring-base</groupId>
     <artifactId>spring-base</artifactId>
@@ -17,12 +19,18 @@
 
     <modules>
         <module>springbean</module>
+        <module>springmq</module>
+        <module>springjob</module>
+        <module>sprnigselect</module>
+        <module>springGateway</module>
+        <module>springRegister</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <spring.cloud.version>1.4.0.RELEASE</spring.cloud.version>
     </properties>
 
     <dependencies>
@@ -33,9 +41,50 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j</artifactId>
+            <version>1.3.5.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.46</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

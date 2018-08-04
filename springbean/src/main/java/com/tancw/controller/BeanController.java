@@ -19,7 +19,7 @@ public class BeanController extends BaseController {
     public String register(String name) {
         User user = new User(1L, name);
         publishEvent(new RegisterEvent(user));
-        return "注册了";
+        return "注册了" + name;
     }
 
 
