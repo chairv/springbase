@@ -26,6 +26,7 @@
         <module>springRegister2</module>
         <module>springPay</module>
         <module>springComm</module>
+        <module>springConfig</module>
     </modules>
 
     <properties>

@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.event.SmartApplicationListener;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.lang.Nullable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -36,6 +37,11 @@ public class RegisterInfoListener implements SmartApplicationListener {
         System.out.println("注册事件2-发送mq:" + event.getSource());
         pubTopic.publish(TopicCons.REGISTER, JSON.toJSONString(event.getSource()));
         System.out.println("注册事件2-发送mq:结束");
+    }
+
+    @JmsListener(destination = TopicCons.REC_REGISTER, containerFactory = "jmsListenerContainerTopic")
+    public void recRegister(String msg) {
+        System.out.println("用户信息已发送到mq:" + msg);
     }
 
     @Override

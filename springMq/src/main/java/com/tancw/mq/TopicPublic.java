@@ -22,9 +22,4 @@ public class TopicPublic {
         jmsMessagingTemplate.convertAndSend(destination, message);
         System.out.println("=========>>>>> 发布topic消息 end," + destination + ",msg:" + message);
     }
-
-    @JmsListener(destination = TopicCons.REC_REGISTER)
-    public void recRegister(String msg) {
-        System.out.println("用户信息已发送到mq:" + msg);
-    }
 }

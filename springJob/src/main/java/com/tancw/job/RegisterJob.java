@@ -10,7 +10,7 @@ import com.tancw.bean.TopicCons;
 public class RegisterJob {
 
     //    @Scheduled(cron = "0 0/1 * * * ?")
-    @JmsListener(destination = TopicCons.REGISTER)
+    @JmsListener(destination = TopicCons.REGISTER, containerFactory = "jmsListenerContainerTopic")
     @SendTo(TopicCons.REC_REGISTER)
     public String register(String msg) {
         System.out.println("register job begin");
