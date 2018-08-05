@@ -8,9 +8,7 @@
         <version>2.0.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
     <!--http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html-->
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>spring-base</groupId>
     <artifactId>spring-base</artifactId>
@@ -26,6 +24,8 @@
         <module>springRedis</module>
         <module>springMybatis</module>
         <module>springRegister2</module>
+        <module>springPay</module>
+        <module>springComm</module>
     </modules>
 
     <properties>
