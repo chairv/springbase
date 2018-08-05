@@ -1,15 +1,18 @@
 server:
   port: 8888
+spring:
+  datasource:
+    username: admin
+    password: admin
+  application:
+    name: register-center1
+  profiles:
+    active: peer1
 eureka:
    instance:
-     hostname: localhost
-     lease-renewal-interval-in-seconds: 3
-     lease-expiration-duration-in-seconds: 7
-     statusPageUrl: http://${eureka.instance.hostname}/info
-     healthCheckUrl: http://${eureka.instance.hostname}/health
-     homePageUrl: http://${eureka.instance.hostname}/
+     hostname: peer1
    client:
-     register-with-eureka: false
-     fetch-registry: false
      service-url:
-        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+        defaultZone: http://peer2:8889/eureka/
+
+
