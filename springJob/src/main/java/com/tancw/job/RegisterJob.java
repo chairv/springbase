@@ -17,4 +17,10 @@ public class RegisterJob {
         System.out.println("mq topic msg: " + msg);
         return msg;
     }
+
+    @JmsListener(destination = TopicCons.REC_REGISTER, containerFactory = "jmsListenerContainerTopic")
+    public void recRegister(String msg) {
+        System.out.println("用户信息已发送到mq:" + msg);
+    }
+
 }
