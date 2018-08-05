@@ -19,7 +19,7 @@
 
         <dependency>
             <groupId>spring-base</groupId>
-            <artifactId>springmq</artifactId>
+            <artifactId>springMq</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

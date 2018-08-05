@@ -19,13 +19,12 @@
 
     <modules>
         <module>springUser</module>
-        <module>springmq</module>
-        <module>springjob</module>
-        <module>sprnigselect</module>
+        <module>springMq</module>
+        <module>springJob</module>
         <module>springGateway</module>
         <module>springRegister</module>
-        <module>springnosql</module>
-        <module>springmybatis</module>
+        <module>springRedis</module>
+        <module>springMybatis</module>
         <module>springRegister2</module>
     </modules>
 
